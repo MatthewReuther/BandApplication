@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" ng-app="tas">
+<html lang="en-US" ng-app="bandapp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,12 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <div class="container">
+      <h1><a href="#"> Main Page</a></h1>
+      <div ng-view></div>
+    </div>
+
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
