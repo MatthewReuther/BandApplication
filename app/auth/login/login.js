@@ -4,7 +4,7 @@ angular.module('bandApp.login', ['ngRoute', 'firebase'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/login', {
-      templateUrl: 'login/login.html',
+      templateUrl: 'auth/login/login.html',
       controller: 'LoginController'
     });
   }])
