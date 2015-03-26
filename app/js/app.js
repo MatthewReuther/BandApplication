@@ -1,7 +1,7 @@
 angular
 
   //allows to define routes
-  .module('bandApp', ['ngRoute', 'bandApp.login'])
+  .module('bandApp', ['ngRoute', 'bandApp.login', 'bandApp.register'])
 
   //$routeProvider which is useful for configuring routes define our routes in its callback function
   .config(['$routeProvider', function($routeProvider) {
@@ -11,5 +11,6 @@ angular
     $routeProvider
       .otherwise ({
         redirectTo: '/login'
-      });
+    });
   }]);
+
