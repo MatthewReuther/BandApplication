@@ -10,16 +10,16 @@ angular.module('bandApp.login', ['ngRoute', 'firebase'])
   }])
 
 // Login controller
-.controller('LoginController', ['$scope','$firebaseSimpleLogin', function($scope,$firebaseSimpleLogin) {
+.controller('LoginController', ['$scope','$firebaseAuth', function($scope,$firebaseAuth) {
   var firebaseObj = new Firebase("https://bandapplication.firebaseio.com/");
-  var loginObj = $firebaseSimpleLogin(firebaseObj);
+  var loginObj = $firebaseAuth(firebaseObj);
 
   $scope.SignIn = function(e) {
       event.preventDefault();  // To prevent form refresh
       var username = $scope.user.email;     //use these to bind login html data to this function
       var password = $scope.user.password;
       // Auth Logic
-        loginObj.$login('password', {
+        loginObj.$authWithPassword( {
           email: username,
           password: password
         })

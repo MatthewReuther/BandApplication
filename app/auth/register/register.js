@@ -11,6 +11,10 @@ angular.module('bandApp.register', ['ngRoute'])
 }])
 
 // Register controller
-.controller('RegisterController', [function() {
-
+.controller('RegisterController', ['$scope', function($scope) {
+  $scope.signUp = function() {
+    if(!$scope.regForm.$invalid) {
+      console.log('yo it works');
+    }
+  };
 }]);
