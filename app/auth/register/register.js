@@ -31,6 +31,9 @@ angular
             }, function(error) {
               // failed creating user
               console.log(error);
+              //using $scope variable regErrorMessage will be displayed on error
+              $scope.regError = true;
+              $scope.regErrorMessage = error.message;
           });
       }
     }
