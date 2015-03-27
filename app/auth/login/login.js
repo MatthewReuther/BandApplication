@@ -10,7 +10,7 @@ angular.module('bandApp.login', ['ngRoute', 'firebase'])
   }])
 
 // Login controller
-.controller('LoginController', ['$scope','$firebaseAuth', function($scope,$firebaseAuth) {
+.controller('LoginController', ['$scope', '$location', '$firebaseAuth', function($scope, $location, $firebaseAuth) {
   var firebaseObj = new Firebase("https://bandapplication.firebaseio.com/");
   var loginObj = $firebaseAuth(firebaseObj);
 
@@ -26,6 +26,7 @@ angular.module('bandApp.login', ['ngRoute', 'firebase'])
         .then(function(user) {
           // Success callback
           console.log('Authentication successful');
+          $location.path('/musician-home')
         },
         function(error) {
           // Failure callback
