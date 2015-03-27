@@ -1,4 +1,4 @@
-angular
+  angular
   .module('bandApp.musician-home', ['ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {

@@ -1,4 +1,5 @@
-angular.module('bandApp.login', ['ngRoute', 'firebase'])
+angular
+  .module('bandApp.login', ['ngRoute', 'firebase'])
 
 // Declared route
 .config(['$routeProvider', function($routeProvider) {
@@ -34,4 +35,6 @@ angular.module('bandApp.login', ['ngRoute', 'firebase'])
         });
       }
 }]);
+
+
 

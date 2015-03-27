@@ -1,7 +1,13 @@
 angular
 
   //allows to define routes
-  .module('bandApp', ['ngRoute', 'bandApp.login', 'bandApp.register', 'bandApp.musician-home'])
+  .module('bandApp', [
+            'ngRoute',
+            'bandApp.login',
+            'bandApp.register',
+            'bandApp.musician-home',
+            'bandApp.musician-new'
+            ])
 
   //$routeProvider which is useful for configuring routes define our routes in its callback function
   .config(['$routeProvider', function($routeProvider) {

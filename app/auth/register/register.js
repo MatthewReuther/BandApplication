@@ -25,7 +25,7 @@ angular
         if (email && password) {
           auth.$createUser (email, password)
             .then(function (){
-              $location.path('/login');
+              $location.path('/musician-new');
               //create user if successful
               console.log('Created User Successfully');
             }, function(error) {
