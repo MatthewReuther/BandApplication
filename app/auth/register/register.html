@@ -25,6 +25,8 @@
           <input ng-model="user.password" type="password" name="password" class="form-control" placeholder="Password" minlength="8" >
           <p class="help-block" ng-show="regForm.password.$error.minlength">Min password length is 8 characters.</p>
           <p style="color:red;" ng-show="regError">{{regErrorMessage}}</p>
+          <label class="checkbox">
+          <a href="#/login">Sign In</a></label>
         </div>
 
         <button type="button" ng-click="signUp();" ng-disabled="!user.email || !user.password" class="btn btn-lg btn-primary btn-block">Register</button>
