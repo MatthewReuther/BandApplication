@@ -13,7 +13,7 @@ angular
   }])
 
 // Register controller
-  .controller('RegisterController', ['$scope','$firebaseAuth', function($scope,$firebaseAuth) {
+  .controller('RegisterController', ['$scope', '$location', '$firebaseAuth', function($scope, $location, $firebaseAuth) {
     var firebaseObj = new Firebase("https://bandapplication.firebaseio.com/");
     var auth = $firebaseAuth(firebaseObj);
     //gets email addresses and password from scope and createUser
@@ -23,8 +23,9 @@ angular
         var email    = $scope.user.email;
         var password = $scope.user.password;
         if (email && password) {
-          auth.$createUser(email, password)
+          auth.$createUser (email, password)
             .then(function (){
+              $location.path('/login');
               //create user if successful
               console.log('Created User Successfully');
             }, function(error) {
