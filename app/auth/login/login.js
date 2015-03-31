@@ -11,7 +11,7 @@ angular
   }])
 
 // Login controller
-.controller('LoginController', ['$scope', '$location', '$firebaseAuth', function($scope, $location, $firebaseAuth) {
+.controller('LoginController', ['$scope', '$location', 'FindUserId', '$firebaseAuth', function($scope, $location, FindUserId, $firebaseAuth) {
   var firebaseObj = new Firebase("https://bandapplication.firebaseio.com/");
   var loginObj = $firebaseAuth(firebaseObj);
 
@@ -27,6 +27,7 @@ angular
         .then(function(user) {
           // Success callback
           console.log('Authentication successful');
+          FindUserId.setUser(user.password.email);
           $location.path('/musician-home')
         },
         function(error) {
@@ -34,7 +35,18 @@ angular
           console.log('Authentication failure');
         });
       }
-}]);
+}])
+  .service('FindUserId', function(){
+    var user = '';
+      return {
+        getUser: function() {
+          return user;
+          },
+        setUser: function(value) {
+          user = value;
+          }
+      };
+  });
 
 
 

@@ -9,6 +9,6 @@
       });
   }])
 
-  .controller('MusicianHomeController', ['$scope', function($scope) {
-
+  .controller('MusicianHomeController', ['$scope', 'FindUserId', function($scope, FindUserId) {
+    $scope.username = FindUserId.getUser();
   }]);
